@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!-- たけや　タイムカード -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>タイムカード</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuOCv+OCpOODoOOCq+ODvOODiSIsICJzaG9ydF9uYW1lIjogIuOCv+OCpOODoOOCq+ODvOODiSIsICJsYW5nIjogImphIiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLCAidGhlbWVfY29sb3IiOiAiI2ZmZmZmZiIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQU1BQUFBREFDQUlBQUFEZHZ2dFFBQUFENEVsRVFWUjQydTNkUVc3ak1BeEdZVmZvTVhyL2srVWU2V0tBV2MwMFR1TGEvTW52clF0VUpwOG9Lb21zai92OXZnR3Zzb1FBQkFLQlFDQVFDQ0FRQ0FRQ2dVQUFnVUFnRUFnRUFnZ0VBb0ZBSUJCQUlCQUlCQUtCUUNDQVFDQVFDQVFDQVFRQ2dVQWdFQWdnRUFnRUFvRkFBSUZBSUJBSTZYd0t3UisrdnI2ZSt2dmI3U1pvMjdaOWpIM043N1BHOElsQUIwdERwaWtDbmVQTlRKT2FDM1NWT25NMDZpbFFCVytHbU5STm9KcnFOTlpvc2NjZ1ZhRElyUFFvUmZFQ0hhak8vb3hlOGs4SlZNNmVvNUpYWkJnRU9pTnR2NTJ0bXFNaVVGaVM1bWlVSjFEV3Q1N3R2Nk1ORStpcGZOUkpSdWl3dXdtMFB3MDFjNUErL24reTJITWFsM3hNb0FJOUVkQVR0dVdIL0l1VEgyZDZCZW9VN3FlR0dsR0hGbnM0MUZhZ1BlRzczVzZobjhMdEhIbHhoMWE2UFZzNDZRNHQ5bkJveERhK3F6M3BqMU5Sb0llenJlVnZReDgrVk0waXROakRvVDRDVGJZbjFDRm40OUZGSU9VbnNRaXRObUcxS1JzdDBNK3phdUNyQzM1KzVEcEZhTlczQjVXRHR0TG5vb1ZzdWtBV3IraUZ6RFllZlFYeUdybjZRYmhZSU8xemVnQ1htYWNJcFFxay9EUUlveVlhSFFXeWZxVUU1REtCckY4OWdybk1Oa1ZJRHdRQ2dVQWFvSUZ0VUxrS3BBSEtDbzRsREFRQ2dVQ2dKaDEwYm9OL3ljaHJWYURMbThTSE9iaGNyMnA5dENYc2FUbDhCa0dnZDdYZzBGOCtCNllmS2hCbENRUUNBUVFDZ1VBZ0VHZ1dmblpDSUJ4QWt3OFN6N3hFUi9sUmdkN1NnajExQmFyL1hYZjkzd3YwRjZqNERQN2ZKVHIxcndXNlpIaE5laUNiTEVzWUNBUUM2YU1yNDdJVkhVYTNrRnJDUUNBUVNCc1VHcGJMQk5JRzlRam1NdHVVSHowUVJncGtGV3NReHJvVnlDb1dFWW8xZWZZb1A4MTdJRVdvZmhBMDBRZ1hLT1YyMllMbHAwSURzTktEYVBFaWtGWTZPR2dySWh3RGkxREtYY1NyUjBBdFhnUjZQS3VHT1BUd01VdXQrTGJ4YUNTUUlwUlZmcmJFeTFZYU94Um56eFo2WTJGTGh4THRDZTZCbWptVSt6akJ0emEzY1dqUGc3aTFtVU1ON2RtMjdlTit2emVvN1lsZmh2UjR0T285ME03d3haV2lOaE1qb0ludTUxQ25zbHA5Q1h2Qmo4cHg3L2NheHBodC9QNkFsaTFGTFYvaUdWT0JYcENqVGhwQ2g5MVFvQmNLekxYNXlCcnRDSUZlWHFUT3pFMzlFWTRXcUhLUzVxZ1RMOUQ3L2ZKUmFTc3lEQUpka0x6TE4zcnBCd3JpQlNxK2RXK3NUaXVCc2pUcWRJeXAxVytpSXhMVDdCQmNxd3BVdkJTMVBEL1pVNkJTSnZVK2Q5dGNvR3MxbW5Ca2U0UkFKNXMwNnFqL0xJRitUNmF4NzRlWUs5Q2JQbm1qQ0lGd0FNN0dnMEFnRUFnRUFnRUVBb0ZBSUJBSUlCQUlCQUtCUUFDQlFDQVFDQVFDQ0FRQ2dVQWdFQWdFRUFnRUFvRkFJSUJBSUJBSUJBSUJCQUtCUUNBUUNDQVFDQVFDSVo1djF5RUowK0FMTXlvQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3BuZyJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQUlBQUFCN0drT3RBQUFLVzBsRVFWUjQydTNkMFhIak9oQkZRVXVsTUpCL1pNeUQvbmVWYmRtaUFNemM3Z0QyZ3dUbUFOUyt0N2Z6UEQ4QXlIUDNDQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBQkFBQUFRQkFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBQkFBQUFRQkFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBQkFBQUFRQkFBQUFRQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBQkFBQUFRQkFBQUFRQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQTZubDRCSFExeHJqa3p6bU93OE9rcGR0NW5wNENwcncySUFCZzFxc0NBZ0Ftdmg0Z0FHRG9pd0VDQUlhK0dDQUFZTzRyQVFJQTVyNFNJQUJnN2lzQkFnRG12aElnQUpqN0tBRUNnTkdQRENBQW1Qc29BUUtBMFk4TUlBQVkvY2dBQW9EUmp3d2dBQmo5eUFBQ2dOR1BEQ0FBR1AzSUFBS0EwWThNSUFBWS9jZ0F2N3Q3QkpqK1hpaHVBR0JTdUFvZ0FCajk1cDNIZ2dCZytodG5IaG9DZ05GdmNubVlDQUNtdnpubDJTSUFHUDBHazZlTkFHQWVHVU1lUGdLQUFXVDBlQkVJQUNhT2NlTzlJQUNZTXVhTGQ0UUFrRGRaakJVdkN3SEFOTUdMUXdCb1BVU01EeThSQVNCdWNKZ2EzaVlDUU55OE1DeThWZ1FBTXdLdkdBR2crMmd3Rjd4ckJJQzRpV0FjZU9rSUFIR0R3QlR3OXFuT3Z3bHMvOXYvNWMxL0hmN3BVRGNBRXFlLzBXOHhXQXdDUU55R3Q5dXRDcXVpR1orQTdIUDd2SnVaTDh1M0lEY0FPazkvbzk4aXNVZ0VBQnM3OUVHVmZnaVdDai93Q2NpV3RxVTdtL1lTZlFzU0FKcHNzK000VFA5T0RaanpOalZBQU9ndy9UMXFWd0VORUFCTWZ6UkFBd1NBN3RQZlo1K1FCa3g0eXhvZ0FCU2IvcDZ6cTRBR0NBQ21QeHFnQVFLQVFZQlhqd0RRNy9qdm96L3ZYZ011QVFMQXB0UGZFMmJDWXRBQUFjRDBSd01RQUV4L05BQUJvTmtteC9KQUFOajByR1I3czNDUnVBUUlBS1kvR29BQVlQcWpBUWdBUlRjemxnMEN3TDRuSTl1WTNSYVBTNEFBWVBxakFRaUE2Vy82b3dFSUFLWS9saE1DNFBnUEZqOENZQU00cjlIMEVxQUJBb0RwajZXRkFEaisyNktFTmNBbFFBQk1mOU1mRFVBQUFCQUF4My9IZjF3Q0VBQk1meXc1Qk1EeDMxYWtZd05jQWdUQTlBY2JCQUhBOFIvTER3Rnd1ckg5Q0dtQVM0QUFZUHBqS1NJQWp2OWdzeUFBT0hOaFFTSUEwU2NhbTQzMkRYQUpFQUFBQk1EeDMvRWZsd0FFQUFBQmNQd0hsd0FFd05ZQ0N4VUI2SHI4QjVzSUFYQ3FBc3NWQVhCeUFWc0pBWENlQW9zV0FYQm1BUnNLQVhDU0Frc1hBUUJBQU1wY1Y1MmhjQW00ZkZzaEFBQUNnT00vdUFRSUFBQUNRSjl6RTFqTUNNRGJ1YUtDTFNZQUFBZ0Fyc3hZMHBhMEFMaWNBamFhQU9Dc2hJV05BQUFnQUs2bFRrbTRCRXpiYmdnQWdBQUFJQUFzdVpENi9rTjd2Z0lKQUFBQ0FJQUFGT1g3RHl4WjZyNENDUUFBQWdDQUFNUmVpc0dDUndBbThSVVNiRUFCQUVBQUFCQUFudUY3S0pZOUFsQ003NDlnR3dvQUFBSUFnQUR3REY5Q3NmZ1JBQUFFb0FJL1BZSE5LQUFBQ0FCLzVCc290b0NISUFBQUNBQUFBZ0NBQUFBZ0FCdncxODdBbGhRQS9zL2Zmd0FiUVFBQUVBQUFCQUJlTWNhNDZydXc3OHNJQUZTYS9wdi9nU0FBVUdENmF3QUNBTG5UWHdNUUFNaWQvaHFBQUdBRWdJM1p4TU1qV0dMYi8vakZMbnJtRWZsdmx5N2ZEaGFlR3dBNGJJSUFBQ0FBNEJJQUFnQ0FBQUFnQUFBSUFNempad0FFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFDb3cvOFVHZ0VBUUFBQUVBQUFCQUFhOGdNQUFnQ0FBSURqUHdnQXYvSi9FamI5c1IyV2UzZ0UvOWovamRkcjZlbG1qZ2d6YmdBWUFhWU1DQUFhWVBxREFLQUJwajhJQUJwZytvTWZnV25kZ05kL0ZqYjZjUU9BeEt1QTZZOGJBTVJkQll4K0JJQTNHbU9ZTWt1dUF0L0Z3T3RZdFJFOEJBRW9OazJzMmg0eHdEdE41amNBQUFFQVFBQUFFQUFBQklDcitTVVpXOEJERUFBQUJLQUlmKzBNYkVZQkFFQUErRHZmUUxINEVRQUFCQUFBQWRpWm41N0FOaFFBWHVKTEtKWTlBZ0NBQUFBZ0FEdnovUkZzUUFIZ0piNkhZc0VqQUFBSUFBQUNzTE9ydmtLNkZCUGlxcVh1QndBQkFFQUFBQkNBeVh3RmdzbUwzUGNmQVFCQUFBQVFnQ1Y4QllKcHk5djNId0VBUUFDY2tzRENSZ0FXY2kwRkcwMEFjRllDUzFvQUFCQUFsMVBBRmhNQVhKbXhtQkVBQUFUQUZkVzVDY2YvT1pzTEFRQVFBRndDd1BGZkFBQVFBTHFkb2NEU1JRRGV6blVWYkNnQndFa0tpeFlCY0dZQmJDVUJ3SGtLeXhVQmNISUJiQ0lCd0trS0N4VUJjSDZ4dFREOUhmOEZBQUFCY0Fsd0NjRHhId0VBUUFCY0FzRHhId0d3MmNDQ1JBQjZYd0xBWmtFQW5MbkFVa1FBOHM0MU5oNzlwci9qdndDZ0FWaCtDSUJMQU5nZ0NJQWw3aFJHNCtPLzZTOEFhQUNXSEFMZ0VtQkRFalA5SGY4RkFBQUJjQWx3Q2NEeEh3SFFBQTNBOUVjQTBBQXNMUVRBSmNCR3BmNzBkL3dYQUEwQWl4OEJ3Q1VBeXdrQmNBNnlhV2s4L1IzL0JRQU53UFJIQURSQUF6RDlFUUEwQU1zR0FYQUpzSmxwTmYwZC93VUFEY0QwUndEUUFFeC9CSURTMnh2TEF3Rmc5N09TVGM3OGhlSDRMd0JvQUtZL0FvQUdZUHF6MnUwOFQwOGhkblBhbjFhWDFlVUdnQkdBVjQ4QXNKa0paeWlEd1BSMy9CY0FOQURUMy9RUDRqY0FtOWErdFlxc0lqY0E0dThCcmdLbXYra3ZBR2dBcHIvcDM1OVBRSGF5eld6QldEQnVBTGdIdUFxWS9xYS9BS0FCR21ENm0vN3QrUVJrZTl2aDFvYTE0UWFBZTRDcmdPbHYrcnNCWUxmYjhCYUR4U0FBMlBaMnZqVmdEZlRrRTFBSDg3ZWlMMEttdjhmdUJrRDBGREFJdkhRRWdPaHhZQ0o0MXdnQTBYUEJhUENLRVFETUNEUENhMFVBU0IwVzVvVzNpUUFRUFRVTURpOFJBU0I2ZkJnaVhod0NnR2xpbW5oWkNBREJZOFZrOFk0UUFLTG5peW5qdlNBQUdEZTVFOGVMUUFBd2VySUdrSWVQQUdBTUJjMGpUeHNCd0dBS0drK2VMUUtBT1JVMHNEeE1CQUFaaUpoaUhob0NnQVowSG5NZUN3S0FER0QwSXdESUFFWS9MZmczZ1RFc3ZGRGNBTUJWd09oSEFFQUdqSDRFQUdUQTZFY0FRQWFNZmdRQUdmQVFqSDRFQUJuQTZFY0FrQUdNZmdRQUdjRG9Sd0JRQXN4OUJBQVp3T2hIQUZBQ3pIMEVBQ1hBM0VjQVVBSnpId1FBSlREM1FRQlFBbk1mQkFBeE1QUkJBQkFEUXg4RUFEMHc4VUVBVUFXekhnUUFiVERsUVFBQStPcnVFUUFJQUFBQ0FJQUFBQ0FBQUFnQUFBSUFnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFDQUFBQWdBQUFJQWdBQUFJQUFBQ0FBQUFnQ0FBQUFJQUFBQ0FJQUFBQ0FBQUFnQUFBSUFnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFDQUFBQWdBQUFJQWdBQUFJQUFBQ0FBQUFnQ0FBQUFJQUFBQ0FJQUFBQ0FBQUFnQUFBSUFnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFDQUFBQWdBQUFJQWdBQUFJQUFBQ0FBQUFnQ0FBQUFnQUFBQ0FJQUFBQ0FBQUFnQUFBSUFnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFDQUFBQWdBQUFJQWdBQUFJQUFBQ0FBQUFnQ0FBQUFnQUFBQ0FJQUFBQ0FBQUFnQUFBSUFnQUFBSUFBQTFQTUpKc3RWcHByMEI1Z0FBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifV19">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADp0lEQVR42u3d4XGjMBSFUaJJGfRfmftwGtgQvHGkd5/O93d3JiAOQniw+Xg+n4f0r4YhEByCQ3AIDsEhOASH4BAcgkOCQ3AIDsEhOASH4BAcgkNwSHAIDsEhOASH4BAcgkNwCA4JDsEhOASHZvS57Z6f53n/Pz8ejw2H6GOfH4x7SQMr/XG8EcSGUHrimGBiByXdcCxh0ZVIHxzLWfQj0gFHKRadiGTjKMuiB5FUHG9hcfOwzfxbcCyT8ZYjtPavw/HOY/Onh6TUxmyNo+yR6EokBsf9A7Bw6CM2shuOm4NeZMSztvaiQcaqe9f69+HVZ447I1j2FIze+Oo45gzud39l2n1vWR8jV8bj8ah/2b6zkWWvLyNXRtAHBqE+Bhl8xOBoKSPUxyCDj7wFaT8ZcXtRCMf1SdPp8bvrfakzeQwy+CiNYzcZKT5G9AhafzTHEfEc6J4jM5xY9rEojouTY5/vLl/s6drJw08wqCQO00bxyWNkjZTFxxY43KTUH6vhBLLvtXCYNiJGzN2KQnDsfE0pOAILcLimpIzbcNKYPKw5BIdycVhwBI1elZnDgqPgaLisCA7BoVQcVqNZY1hi5li1/jrP82Ksr/91hzWpy4q+LfVNTdPO6fM8t73NNnNYKsEhOASH4BAcgiO1bW9lP3c+YOk/P23mkJlj3fTzp799buaYMb1PvkItl1HhY9nPyYeh5kfRQZPEzE215hAcgkMNcXiCsOBozMbh/jBo9FxWBIeicVh2VBuHBTgsO1LGbThpjIA1h0JwuLJEjFjeq0NdU/rjMHnUH6vhBLLXFXGUfQlNKRkLp1h3K6qKw+RxFH4p0QgdNUuNLXC4bSk7MsOJZe9K44h4sftkGX4TbF8f9WUcQa/U6OQjQsaR9TlHDx9BexH2Gq90Hz9u/+6v8drWR5aMI/SN1Ik+4mTUXXM085Eo4ziOj+fzGb12K/4Ba/QulL5buTNqlaeQdNylZ46XDn+pUU7c5rCZ46URrDOF9JCRMXO8euwXDnrERjbE8R9zw7QDUHbDNsJR8Eh0ZZGK4zfLi2k/bdtARiqOdy0/Zy51Ex94S8VR7Q6lGYsOOIoTSX88tgOOgkR6PDXdB0cRIp0epu+GYyGRft+x6IljppLG37tpjuOPoGzyRayNcPzGyp5fy9sXh37MTzAIDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEhwSH4BAcemdfw8nsruFgd+0AAAAASUVORK5CYII=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="タイムカード">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ffffff">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1b2329; --mute: #6b7680; --line: #e2e6ea; --head: #f5f7f9;
+    --accent: #2f5d8a; --warn: #9a6200; --alert: #c62828;
+    --font: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); max-width: 480px; background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 14px; }
+  button, input, select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; }
+  button { cursor: pointer; }
+  button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  [hidden] { display: none !important; }
+
+  #clock { font-size: 44px; font-weight: 300; letter-spacing: .02em; text-align: center; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  #date { text-align: center; color: var(--mute); margin: 4px 0 18px; font-size: 13px; }
+  #status { text-align: center; margin: 0 0 8px; min-height: 1.4em; font-weight: 600; }
+  #name { width: 100%; font-size: 19px; font-weight: 700; padding: 10px; border: 2px solid #8f9aa4; border-radius: 4px; margin-bottom: 14px; }
+  .btns { display: flex; gap: 10px; }
+  .btns button { flex: 1; height: 88px; font-size: 24px; font-weight: 600; letter-spacing: .2em;
+    background: #ffffff; color: #1b1b1b; border: 2px solid #1b1b1b; border-radius: 4px; }
+  .btns button:active { background: #e6e6e6; }
+
+  .dlg { background: var(--head); border-radius: 4px; padding: 16px; display: grid; gap: 12px; }
+  .dlg-title { font-size: 18px; font-weight: 600; margin: 0; }
+  .dlg-body { margin: 0; color: var(--mute); }
+  .dlg-warn { margin: 0; color: var(--warn); font-weight: 600; }
+  .dlg-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .dlg-btns button { flex: 1 1 30%; min-height: 52px; font-size: 17px; font-weight: 500; }
+  .yes { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .form { display: grid; gap: 8px; }
+  .form label { display: grid; gap: 4px; font-size: 12px; color: var(--mute); }
+  .form input { font-size: 16px; padding: 8px; width: 100%; }
+  .form .clear { justify-self: start; font-size: 12px; padding: 2px 8px; }
+  .inline { display: flex; gap: 8px; align-items: center; }
+  .inline input { flex: 1; min-width: 0; font-size: 16px; padding: 8px; }
+  .worklist { list-style: none; margin: 0; padding: 0; }
+  .worklist li { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding: 6px 0; border-bottom: 1px solid var(--line); }
+
+  #sync { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 16px 0; font-size: 13px; color: var(--mute); }
+  #unsent.has { color: var(--alert); }
+  h2 { font-size: 13px; font-weight: 600; margin: 16px 0 0; padding-bottom: 6px; border-bottom: 1px solid var(--fg); }
+  h2 small { font-weight: 400; color: var(--mute); }
+  #list { list-style: none; padding: 0; margin: 0; }
+  #list button { width: 100%; display: grid; grid-template-columns: 2.8em minmax(0, 1fr) 7.2em 3em 3.6em; gap: 8px; align-items: center;
+    padding: 12px 4px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent;
+    text-align: center; font-size: 13px; font-variant-numeric: tabular-nums; }
+  #list button:active { background: var(--head); }
+  .c-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .c-st { font-size: 12px; color: var(--mute); }
+  .c-st.unsent { color: var(--alert); } .c-st.open { color: var(--fg); }
+
+  .io { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 8px; font-size: 13px; }
+  .io summary { color: var(--mute); cursor: pointer; font-size: 12px; }
+  .io-body { display: grid; gap: 8px; padding-top: 8px; }
+  .io-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .io-row button { min-width: 8.5em; }
+  .note { font-size: 11px; color: var(--mute); }
+
+  #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--fg); color: #fff;
+    padding: 10px 16px; border-radius: 4px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+  <div id="clock">--:--:--</div>
+  <div id="date"></div>
+
+  <div id="home">
+    <div id="status"></div>
+    <select id="name" aria-label="名前"><option value="">名前を選択</option></select>
+    <div class="btns"><button id="in">出勤</button><button id="out">退勤</button></div>
+  </div>
+
+  <div class="dlg" id="dlg" hidden>
+    <p class="dlg-title" id="dlgTitle"></p>
+    <p class="dlg-warn" id="dlgWarn" hidden></p>
+    <p class="dlg-body" id="dlgBody" hidden></p>
+    <div id="dlgExtra"></div>
+    <div class="dlg-btns" id="dlgBtns"></div>
+  </div>
+
+  <div id="sync"><span id="unsent"></span><span id="lastSent"></span></div>
+  <h2>出勤データ <small>（タップで修正）</small></h2>
+  <ul id="list"></ul>
+
+  <details class="io">
+    <summary>受信・送信</summary>
+    <div class="io-body">
+      <div class="io-row"><button id="fetchNames">名前を受信</button><span class="note" id="namesInfo"></span></div>
+      <div class="io-row"><button id="send">データを送信</button><span class="note" id="sendInfo"></span></div>
+    </div>
+  </details>
+
+  <div id="toast" role="status"></div>
+
+<script>
+/* 端末に保存する出勤データ
+   1件 = 1回の勤務（出勤〜退勤）。{ id, name, inTs, outTs|null, breakMin|null, ver, kind, sent, edited }
+   ID  = 名前-出勤日(yyyymmdd)-その日の何回目   例: 山田-20261020-1
+   ver = 版。送信済みの記録が変わったときだけ +1（シートでは旧版を残し、最新版だけを集計に使う） */
+/* ===== 設定 =====
+   GAS_URL : Apps Script をウェブアプリとしてデプロイしたときの URL（…/exec）
+   TOKEN   : Code.gs の TOKEN と同じ文字列。URL を知っているだけの第三者からの送信を弾く */
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbw5wDJOJ9GUUaqlBv6N5Ts9SkyQAjA03ubH8Rx4iSEd19WfXwk7OClj6XEqLbWqq3vI/exec';
+const TOKEN = 'Xr2huSt4Zj_VJWAX';
+
+const K = { SH: 'tc_shifts_v1', NAMES: 'tc_names_v1', NAMES_AT: 'tc_names_at_v1', SENT_AT: 'tc_sent_at_v1', AUTO_AT: 'tc_auto_at_v1' };
+const AUTO_HOUR = 20;   // 自動送信は1日1回、この時刻
+const KEEP_DAYS = 7;    // 送信済みの出勤データを端末に残す日数（今日を含む）
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, '0');
+const el = (tag, props, ...kids) => { const e = Object.assign(document.createElement(tag), props || {}); kids.forEach(k => e.append(k)); return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function load(k, d) { try { const v = localStorage.getItem(k); return v ? (JSON.parse(v) ?? d) : d; } catch (e) { return d; } }
+function save(k, v) {
+  try { localStorage.setItem(k, JSON.stringify(v)); return true; }
+  catch (e) { toast('この端末に保存できません。プライベートブラウズを解除してください'); return false; }
+}
+
+const now = () => Date.now();
+const getShifts = () => load(K.SH, []);
+function dayStart(o) { const d = new Date(now()); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + (o || 0)); return d.getTime(); }
+const hm = t => { const d = new Date(t); return pad(d.getHours()) + ':' + pad(d.getMinutes()); };
+const md = t => { const d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate(); };
+const ymd = t => { const d = new Date(t); return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`; };
+const sameDay = (a, b) => ymd(a) === ymd(b);
+const elapsed = ms => { const m = Math.max(0, Math.floor(ms / 60000)); return `${Math.floor(m / 60)}時間${m % 60}分`; };
+function toast(m) { const t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 2500); }
+function toLocalInput(t) { const d = new Date(t); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+
+function makeId(name, inTs, shifts) {
+  const prefix = `${name}-${ymd(inTs)}-`;
+  const max = shifts.filter(s => s.id.startsWith(prefix)).reduce((m, s) => Math.max(m, Number(s.id.slice(prefix.length)) || 0), 0);
+  return prefix + (max + 1);
+}
+// 送信済み・退勤済みで、退勤が KEEP_DAYS 日より前のものを削除。勤務中と未送信は消さない
+function cleanup(list) {
+  const cutoff = dayStart(-(KEEP_DAYS - 1));
+  return list.filter(s => !(s.sent && s.outTs != null && s.outTs < cutoff));
+}
+const openShift = name => getShifts().filter(s => s.name === name && s.outTs == null).sort((a, b) => b.inTs - a.inTs)[0];
+const lastDone = name => getShifts().filter(s => s.name === name && s.outTs != null).sort((a, b) => b.outTs - a.outTs)[0];
+const openShifts = () => getShifts().filter(s => s.outTs == null).sort((a, b) => a.inTs - b.inTs);
+
+/* ---------- 通信（名前の受信と送信のときだけ） ---------- */
+async function api(payload) {
+  if (!GAS_URL) throw new Error('送信先のURLが設定されていません');
+  if (!navigator.onLine) throw new Error('オフラインです');
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 20000);
+  try {
+    const res = payload
+      ? await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(Object.assign({ token: TOKEN }, payload)), signal: ctl.signal })
+      : await fetch(`${GAS_URL}?action=names&token=${encodeURIComponent(TOKEN)}`, { signal: ctl.signal });
+    if (!res.ok) throw new Error('サーバーエラー ' + res.status);
+    const json = await res.json();
+    if (json.error) throw new Error(json.error);
+    return json;
+  } finally { clearTimeout(timer); }
+}
+const failMsg = (e, what) => e && /URL/.test(e.message) ? e.message
+  : `${what}できませんでした。電波の良い場所で再度お試しください`;
+
+/* ---------- 名前 ---------- */
+function fillNames() {
+  const names = load(K.NAMES, []), sel = $('name');
+  sel.length = 1;
+  names.forEach(n => sel.appendChild(el('option', { value: n, textContent: n })));
+  const at = load(K.NAMES_AT, null);
+  $('namesInfo').textContent = at ? `${names.length}名・最終受信 ${md(at)} ${hm(at)}` : '未受信';
+}
+let fetching = false;
+function fetchNames(auto) {
+  if (fetching) return;
+  fetching = true; $('namesInfo').textContent = '受信中…';
+  api(null).then(res => {
+    fetching = false;
+    const names = Array.isArray(res.names) ? res.names : [];
+    save(K.NAMES, names); save(K.NAMES_AT, now());
+    fillNames(); renderPhone();
+    toast(`名前を受信しました（${names.length}名）`);
+  }).catch(e => {
+    fetching = false; fillNames();
+    if (!auto) toast(failMsg(e, '名前を受信'));
+  });
+}
+
+/* ---------- 画面切り替え ---------- */
+function showDialog({ title, warn, body, extra, buttons }) {
+  $('home').hidden = true;
+  $('dlgTitle').innerHTML = title;
+  $('dlgWarn').hidden = !warn; $('dlgWarn').textContent = warn || '';
+  $('dlgBody').hidden = !body; $('dlgBody').textContent = body || '';
+  $('dlgExtra').replaceChildren(...(extra ? [extra] : []));
+  $('dlgBtns').replaceChildren(...buttons.map(b => el('button', { className: b.cls || '', textContent: b.label, onclick: b.onClick })));
+  $('dlg').hidden = false;
+  window.scrollTo(0, 0);
+}
+// 初期画面へ（名前もリセット）
+function resetHome() {
+  $('dlg').hidden = true; $('home').hidden = false;
+  $('name').value = '';
+  renderPhone();
+}
+
+/* ---------- 出勤 ---------- */
+function onIn() {
+  const name = $('name').value;
+  if (!name) { toast('名前を選んでください'); return; }
+  const t = now(), open = openShift(name);
+  if (open) {
+    const old = !sameDay(open.inTs, t);
+    showDialog({
+      title: `${esc(name)}さんは勤務中です`,
+      warn: old ? '前回の退勤が記録されていません。記録を修正して退勤時刻を入れてください' : '',
+      body: `${md(open.inTs)} ${hm(open.inTs)} に出勤（経過 ${elapsed(t - open.inTs)}）`,
+      buttons: old
+        ? [{ label: '記録を修正', cls: 'yes', onClick: () => editShift(open.id) }, { label: '閉じる', onClick: resetHome }]
+        : [{ label: '閉じる', cls: 'yes', onClick: resetHome }]
+    });
+    return;
+  }
+  showDialog({
+    title: `${esc(name)}さんが ${hm(t)} に出勤`,
+    body: 'この内容で記録しますか？',
+    buttons: [
+      { label: 'はい', cls: 'yes', onClick: () => {
+        const shifts = getShifts();
+        shifts.push({ id: makeId(name, t, shifts), name, inTs: t, outTs: null, breakMin: null, ver: 1, kind: '打刻', sent: false });
+        if (!save(K.SH, shifts)) return;
+        toast(`${name}さん：出勤 ${hm(t)} を記録しました`);
+        resetHome();
+      } },
+      { label: 'いいえ', onClick: resetHome }
+    ]
+  });
+}
+
+/* ---------- 退勤 ---------- */
+function onOut() {
+  const name = $('name').value;
+  if (!name) { toast('名前を選んでください'); return; }
+  const t = now(), open = openShift(name);
+  if (!open) {
+    const last = lastDone(name);
+    const today = last && sameDay(last.outTs, t);
+    showDialog({
+      title: today ? `${esc(name)}さんは退勤済みです` : `${esc(name)}さんは出勤していません`,
+      body: today ? `${md(last.outTs)} ${hm(last.outTs)} に退勤（休憩${last.breakMin}分）`
+        : '出勤を押し忘れた場合は、出勤を記録してから出勤データで時刻を修正してください',
+      buttons: [{ label: '閉じる', cls: 'yes', onClick: resetHome }]
+    });
+    return;
+  }
+  showDialog({
+    title: `${esc(name)}さんの退勤ですか？`,
+    body: `${md(open.inTs)} ${hm(open.inTs)} 出勤 → ${hm(t)} 退勤`,
+    buttons: [
+      { label: 'はい', cls: 'yes', onClick: () => askBreak(open.id, name, t) },
+      { label: 'いいえ', onClick: resetHome }
+    ]
+  });
+}
+
+function askBreak(id, name, t) {
+  const done = min => {
+    const shifts = getShifts(), s = shifts.find(x => x.id === id);
+    if (!s) { toast('出勤データが見つかりません'); resetHome(); return; }
+    if (s.sent) { s.ver = (s.ver || 1) + 1; s.kind = '退勤追記'; }
+    s.outTs = t; s.breakMin = min; s.sent = false;
+    if (!save(K.SH, shifts)) return;
+    toast(`${name}さん：退勤 ${hm(t)}・休憩${min}分 を記録しました`);
+    resetHome();
+  };
+  const input = el('input', { type: 'number', min: 0, max: 600, step: 1, inputMode: 'numeric', placeholder: '分' });
+  const ok = el('button', { className: 'yes', textContent: '決定', onclick: () => {
+    const v = Number(input.value);
+    if (input.value === '' || !Number.isInteger(v) || v < 0 || v > 600) { toast('0〜600の整数で入力してください'); input.focus(); return; }
+    done(v);
+  } });
+  const extra = el('div', { className: 'inline', hidden: true }, input, el('span', { textContent: '分' }), ok);
+  showDialog({
+    title: '本日の休憩時間を入力してください',
+    body: `${name}さん ${hm(t)} 退勤`,
+    extra,
+    buttons: [
+      { label: '45分', cls: 'yes', onClick: () => done(45) },
+      { label: '60分', cls: 'yes', onClick: () => done(60) },
+      { label: '入力', onClick: () => { extra.hidden = false; input.focus(); } },
+      { label: 'キャンセル', onClick: resetHome }
+    ]
+  });
+}
+
+/* ---------- 修正 ---------- */
+function editShift(id) {
+  const s = getShifts().find(x => x.id === id); if (!s) return;
+  const inI = el('input', { type: 'datetime-local', step: 60, value: toLocalInput(s.inTs) });
+  const outI = el('input', { type: 'datetime-local', step: 60, value: s.outTs != null ? toLocalInput(s.outTs) : '' });
+  const brk = el('input', { type: 'number', min: 0, max: 600, step: 1, inputMode: 'numeric', value: s.breakMin ?? '', placeholder: '分' });
+  const clr = el('button', { className: 'clear', textContent: '退勤を空にする（勤務中に戻す）', onclick: () => { outI.value = ''; brk.value = ''; } });
+  const form = el('div', { className: 'form' },
+    el('label', {}, '出勤日時', inI), el('label', {}, '退勤日時', outI), clr, el('label', {}, '休憩（分）', brk));
+  showDialog({
+    title: `${esc(s.name)}さんの記録を修正`,
+    warn: s.sent ? '送信済みの記録です。次の送信で、修正後の内容がシートに追加されます' : '',
+    extra: form,
+    buttons: [
+      { label: '保存', cls: 'yes', onClick: () => {
+        const inTs = new Date(inI.value).getTime();
+        if (!isFinite(inTs)) { toast('出勤日時を入力してください'); return; }
+        let outTs = null, b = null;
+        if (outI.value) {
+          outTs = new Date(outI.value).getTime();
+          if (!(outTs > inTs)) { toast('退勤は出勤より後にしてください'); return; }
+          b = Number(brk.value);
+          if (brk.value === '' || !Number.isInteger(b) || b < 0 || b > 600) { toast('休憩は0〜600の整数で入力してください'); return; }
+          if (b * 60000 >= outTs - inTs) { toast('休憩が勤務時間以上になっています'); return; }
+        } else if (getShifts().some(x => x.name === s.name && x.outTs == null && x.id !== s.id)) {
+          toast(`${s.name}さんには別の勤務中の記録があります`); return;
+        }
+        const shifts = getShifts(), x = shifts.find(y => y.id === id);
+        if (x.sent) x.ver = (x.ver || 1) + 1;
+        x.kind = '修正';
+        x.inTs = inTs; x.outTs = outTs; x.breakMin = b; x.sent = false; x.edited = true;
+        if (!save(K.SH, shifts)) return;
+        toast('修正しました'); resetHome();
+      } },
+      { label: 'キャンセル', onClick: resetHome }
+    ]
+  });
+}
+
+/* ---------- 表示 ---------- */
+function renderPhone() {
+  const shifts = getShifts().sort((a, b) => b.inTs - a.inTs);
+  const name = $('name').value;
+  const open = name && shifts.find(s => s.name === name && s.outTs == null);
+  const done = name && shifts.filter(s => s.name === name && s.outTs != null).sort((a, b) => b.outTs - a.outTs)[0];
+  $('status').textContent = !name ? '名前を選んでください'
+    : open ? `勤務中（${md(open.inTs)} ${hm(open.inTs)} 出勤）`
+    : done ? `退勤済み（${md(done.outTs)} ${hm(done.outTs)}）` : '出勤データなし';
+
+  const unsent = shifts.filter(s => !s.sent).length, at = load(K.SENT_AT, null);
+  $('unsent').textContent = sending ? '送信中…' : unsent ? `未送信 ${unsent}件` : 'すべて送信済み';
+  $('unsent').classList.toggle('has', !sending && unsent > 0);
+  const lastTxt = at ? `最終送信 ${md(at)} ${hm(at)}` : '送信履歴なし';
+  $('lastSent').textContent = lastTxt; $('sendInfo').textContent = lastTxt;
+
+  const outTxt = s => s.outTs == null ? '' : sameDay(s.inTs, s.outTs) ? hm(s.outTs) : '翌' + hm(s.outTs);
+  $('list').replaceChildren(...shifts.map(s => el('li', {},
+    el('button', { onclick: () => editShift(s.id) },
+      el('span', { textContent: md(s.inTs) }),
+      el('span', { className: 'c-name', textContent: s.name }),
+      el('span', { textContent: `${hm(s.inTs)}–${outTxt(s)}` }),
+      el('span', { textContent: s.outTs != null ? `${s.breakMin}分` : '' }),
+      el('span', { className: 'c-st ' + (s.outTs == null ? 'open' : !s.sent ? 'unsent' : ''),
+        textContent: s.outTs == null ? '勤務中' : s.sent ? '送信済' : '未送信' })))));
+}
+
+function showWorking(open, sub, buttons) {
+  const names = [...new Set(open.map(s => s.name))];
+  const list = el('ul', { className: 'worklist' }, ...open.map(s =>
+    el('li', {}, el('span', { textContent: `${s.name}さん` }), el('span', { textContent: `${md(s.inTs)} ${hm(s.inTs)} 出勤（経過 ${elapsed(now() - s.inTs)}）` }))));
+  showDialog({ title: `${names.map(n => esc(n) + 'さん').join('、')}が勤務中です`, body: sub, extra: list, buttons });
+}
+
+/* ---------- 送信 ---------- */
+let sending = false;
+
+// 「データを送信」：勤務中の人がいれば先に知らせる
+function requestSend() {
+  const open = openShifts();
+  if (!open.length) { sendData(true); return; }
+  showWorking(open, '退勤していない記録は「勤務中」のまま送信されます。退勤後にもう一度送ると、退勤時刻が入った新しい版が届きます。', [
+    { label: 'このまま送信', cls: 'yes', onClick: () => { resetHome(); sendData(true); } },
+    { label: '戻る', onClick: resetHome }
+  ]);
+}
+
+// 自動送信は1日1回だけ。20時に開いていればその時、閉じていれば20時以降に最初に開いた時
+function autoCheck() {
+  const t = new Date(now()); t.setHours(AUTO_HOUR, 0, 0, 0);
+  const at20 = t.getTime();
+  if (now() < at20 || load(K.AUTO_AT, 0) >= at20) return;
+  save(K.AUTO_AT, now());   // 失敗しても今日はもう自動では送らない
+  sendData(false);
+  const open = openShifts();
+  if (open.length && $('dlg').hidden) showWorking(open, '20時の送信時点で勤務中です', [{ label: '閉じる', cls: 'yes', onClick: resetHome }]);
+}
+
+// 未送信をすべて送る。manual=true は「データを送信」ボタン
+function sendData(manual) {
+  if (sending) return;
+  const targets = getShifts().filter(s => !s.sent);
+  if (!targets.length) { if (manual) toast('送信するデータはありません'); return; }
+  sending = true; renderPhone();
+  const payload = targets.map(({ id, name, inTs, outTs, breakMin, ver, kind }) =>
+    ({ id, name, inTs, outTs: outTs ?? null, breakMin: breakMin ?? null, ver: ver || 1, kind: kind || '打刻' }));
+  api({ action: 'submit', shifts: payload }).then(res => {
+    // 送った内容と今の内容が同じものだけ送信済みにする（送信中に修正されたものは未送信のまま）
+    const sent = new Map(payload.map(p => [p.id, p]));
+    const ok = new Set(res.ids || []);
+    const shifts = getShifts().map(s => {
+      const p = sent.get(s.id);
+      return p && ok.has(s.id) && p.inTs === s.inTs && p.outTs === (s.outTs ?? null) && p.breakMin === (s.breakMin ?? null) && p.ver === (s.ver || 1)
+        ? Object.assign(s, { sent: true, edited: false }) : s;
+    });
+    save(K.SH, cleanup(shifts)); save(K.SENT_AT, now());
+    sending = false; renderPhone();
+    if (manual) toast(`${ok.size}件を送信しました`);
+  }).catch(e => {
+    sending = false; renderPhone();
+    if (manual) toast(failMsg(e, '送信'));
+  });
+}
+
+/* ---------- 時計・画面の常時点灯 ---------- */
+function tick() {
+  const d = new Date();
+  $('clock').textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  $('date').textContent = d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
+}
+let wakeLock = null;
+async function keepAwake() {
+  try { if ('wakeLock' in navigator && !wakeLock) { wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release', () => { wakeLock = null; }); } }
+  catch (e) { /* 対応していない端末では端末側の自動ロックをオフにする */ }
+}
+
+/* ---------- 起動 ---------- */
+$('in').onclick = onIn;
+$('out').onclick = onOut;
+$('name').onchange = renderPhone;
+$('fetchNames').onclick = () => fetchNames(false);
+$('send').onclick = requestSend;
+
+fillNames();
+if (!load(K.NAMES, []).length) fetchNames(true);
+tick(); setInterval(tick, 1000);
+save(K.SH, cleanup(getShifts()));
+renderPhone();
+autoCheck();
+setInterval(autoCheck, 30 * 1000);
+keepAwake();
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { renderPhone(); autoCheck(); keepAwake(); } });
+document.addEventListener('click', keepAwake, { once: true });
+</script>
+</body>
+</html>
